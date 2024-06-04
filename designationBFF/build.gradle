@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.colruyt.designationsvc'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.7.5'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.5'
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.7.5'
+// https://mvnrepository.com/artifact/com.h2database/h2
+    implementation group: 'com.h2database', name: 'h2', version: '2.2.224'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
